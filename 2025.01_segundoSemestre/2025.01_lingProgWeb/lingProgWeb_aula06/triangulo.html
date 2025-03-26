@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triângulo</title>
+</head>
+<body>
+    <h1>Triângulo</h1>
+    <p>Digite três números de arestas e descubra qual tipo de triângulo é formado</p>
+    <form onsubmit="checagem(event)">
+        <p>
+            1ª aresta
+            <input type="number" id="aresta1" required/>
+        </p>
+        <p>
+            2ª aresta
+            <input type="number" id="aresta2" required/>
+        </p>
+        <p>
+            3ª aresta
+            <input type="number" id="aresta3" required/>
+        </p>
+        <input type="submit" value="Enviar" />
+    </form>
+
+    <h3></h3>
+
+    <script src="js/triangulo.js"></script>
+</body>
+</html>
