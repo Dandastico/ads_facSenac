@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <form onsubmit="calculateAverage(event)">
+        <p>
+            Nome do Aluno:
+            <input type="text" id="inNome" required />
+        </p>
+        <p>
+            Primeira nota:
+            <input type="number" id="inNota1" step="0.1" min="0" max="10" required />
+        </p>
+        <p>
+            Segunda nota:
+            <input type="number" id="inNota2" step="0.1" min="0" max="10" required/>
+        </p>
+        <input type="submit" value="Exbir média e aprovação" />
+    </form>
+    
+    <!-- lugar onde mostrará os resultados -->
+     <h3></h3>
+     <h4></h4>
+    <script src="js/ex4_1.js"></script>
+</body>
+</html>

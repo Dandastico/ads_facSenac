@@ -1,0 +1,16 @@
+Em que situações deve usar let e quando se deve usar const?
+Reposta:
+    Variável declarada com "let" existe dentro do escopo
+do bloco de código. Declaráveis declaradsa com "let" também não
+podem ser declarados novamento dentro do mesmo escopo
+    Variáveis declaradas com "const" também tem escopo de código,
+mas não podem ter seus valores alterados após sua declaração
+
+Para que serve a função typeof?
+Reposta:
+    typeof é uma função que retorna qual o tipo primário da Variável
+
+O que é "hoisting"?
+Reposta:
+    "Hoisting" é a elevação da função ou de variáveis para o topo
+do código, mesmo que ele tenha sido declarado após sua invocação
