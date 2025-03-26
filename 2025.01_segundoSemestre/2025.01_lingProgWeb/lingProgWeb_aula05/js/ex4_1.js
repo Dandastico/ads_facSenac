@@ -2,7 +2,7 @@
 console.log("Carregou JS")
 
 function calculateAverage(event) {
-    // previne o envio do formulário as coisas estarem preenchidas
+    // previne o envio do formulário pro servidor
     event.preventDefault();
 
     const nota1 = parseFloat(document.getElementById("inNota1").value)
