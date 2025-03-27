@@ -55,3 +55,21 @@ for word in words:
         print(f"{word} está escrito errado")
 
 print(count)
+
+print()
+
+'''Métodos da string'''
+print("Testando isascii")
+print("999.999".isascii())
+print("Testando isalnum")
+print("999a999".isalnum())
+print("Testando statswith")
+print("Senac".startswith('S'))
+print("Testando count")
+print("Senac".count('e'))
+print("Testando replace")
+print("Senac".replace('S', 's'))
+print("Testando find")
+print("Senac".find('n'))
+print("Testando strip")
+print("     Senac      ".strip())
