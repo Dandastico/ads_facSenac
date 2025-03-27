@@ -34,7 +34,8 @@ for key in words:
     else:
         num_words[key] = 1
 
-print(num_words)
+sorted_d = sorted(num_words.items(), key=lambda item : item[1], reverse=True)
+print(sorted_d)
 
 
 '''quantidade de artigos e preposições'''
