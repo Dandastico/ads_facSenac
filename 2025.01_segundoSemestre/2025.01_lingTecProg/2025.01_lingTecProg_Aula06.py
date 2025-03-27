@@ -39,7 +39,8 @@ print(num_words)
 
 '''quantidade de artigos e preposições'''
 lista = ["a", "as", "o", "os", "de", "ao", "antes", "de", "do"]
-string = "o melhor de brasília ao alcance do brasil"
+wrongs = ["ate", "apos"]
+string = "o melhor de brasília ao alcance do brasil ate Sergipe"
 
 # constrói lista de palavras separando a string
 words = string.split(' ')
@@ -49,5 +50,7 @@ count = 0
 for word in words:
     if word in lista:
         count += 1
+    if word in wrongs:
+        print(f"{word} está escrito errado")
 
 print(count)
