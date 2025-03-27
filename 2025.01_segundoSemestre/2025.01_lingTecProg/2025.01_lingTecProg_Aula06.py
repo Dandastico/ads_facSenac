@@ -1,7 +1,7 @@
 string = "senac é muito legal. daniel é mais legal"
 
 
-# imprimir frases antes e depois do ponto final
+'''imprimir frase antes e depois do ponto final'''
 strings = string.capitalize().split(". ")
 
 for s in strings:
