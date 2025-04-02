@@ -48,4 +48,9 @@ function calcularMedia(event){
     } else {
         situacao = "Reprovado por falta"
     }
+
+    const resultadoSituacao = document.querySelector("h2")
+    const resultadoMedia = document.querySelector("h3")
+    resultadoSituacao.innerHTML = `Situação: ${situacao}`;
+    resultadoMedia.innerHTML = `Média: ${aluno.media}`;
 }
