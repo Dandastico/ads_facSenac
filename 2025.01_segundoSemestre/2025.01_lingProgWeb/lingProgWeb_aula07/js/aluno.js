@@ -8,7 +8,7 @@ function Aluno(nome, disciplina, frequencia,nota1, nota2) {
     this.frequencia = frequencia;
     this.nota1 = nota1;
     this.nota2 = nota2
-    this.media = (nota1/nota2) / 2 // calculo da média
+    this.media = (nota1+nota2) / 2 // calculo da média
 }
 
 function calcularMedia(event){
@@ -24,7 +24,7 @@ function calcularMedia(event){
     console.log(disciplina)
 
     // pegar porcentagem de frequência
-    const frequencia = document.getElementById("frequencia").value
+    const frequencia = Number(document.getElementById("frequencia").value)
     console.log(frequencia)
 
     // pegar notas do formulário
@@ -34,13 +34,19 @@ function calcularMedia(event){
     const nota2 = Number(document.getElementById("nota2").value)
     console.log(nota2)
 
+    // valores das notas e das frequências devem ser preenchidos
+    if (isNaN(nota1) || isNaN(nota2) || isNaN(frequencia)) {
+        alert("Preencha os campos corretamente");
+        return; // para a execução do programa
+    }
+
     const aluno = new Aluno(nome, disciplina, frequencia, nota1, nota2);
 
     let situacao;
     if (frequencia >= 75) {
-        if (media >= 6) {
+        if (aluno.media >= 6) {
             situacao = "Aprovado"
-        } else if (media >= 2) {
+        } else if (aluno.media >= 2) {
             situacao = "Recuperação"
         } else {
             situacao = "Reprovado"
