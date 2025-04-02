@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto ALuno</title>
+</head>
+<body>
+    <h1>Cálculo da média</h1>
+    <form onsubmit="calcularMedia(event)">
+        <p>
+            Qual nome do aluno
+            <input type="text" id="nome" required/>
+        </p>
+        <p>
+            Disciplina
+            <input type="text" id="disciplina" required/>
+        </p>
+        <p>
+            Porcentagem da frequência
+            <input type="number" id="frequencia" required/>
+        </p>
+        <p>
+            Nota 1
+            <input type="number" id="nota1" required/>
+        </p>
+        <p>
+            Nota 2
+            <input type="number" id="nota2" required/>
+        </p>
+
+        <input type="submit" value="Enviar" />
+    </form>
+
+    <h3></h3>
+
+    <script src="js/aluno.js"></script>
+</body>
+</html>
