@@ -39,3 +39,12 @@ with open("contatos5.txt", 'ba') as arquivo:
     arquivo.writelines(d) 
 # não funcionou, parece que realmente preciso transformar ints em strings
 '''
+
+
+# modo de leitura, readlines lê tudo do arquivo
+with open("contatos2.txt", 'r', encoding="utf8") as arquivo:
+    print(arquivo.readlines())
+
+# experimentando readline, lendo bytes
+with open("contatos2.txt", 'r', encoding="utf8") as arquivo:
+    print(arquivo.readline(3)) # lê os primeiros 3 bytes
