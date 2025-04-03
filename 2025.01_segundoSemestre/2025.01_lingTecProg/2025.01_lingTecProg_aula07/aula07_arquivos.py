@@ -48,3 +48,10 @@ with open("contatos2.txt", 'r', encoding="utf8") as arquivo:
 # experimentando readline, lendo bytes
 with open("contatos2.txt", 'r', encoding="utf8") as arquivo:
     print(arquivo.readline(3)) # lê os primeiros 3 bytes
+
+# experimentando abrir o mesmo arquivo de maneira aninhada
+with open("contatos2.txt", 'r', encoding="utf8") as arquivo:
+    with open("contatos2.txt", 'r', encoding="utf8") as arquivo2:
+        print(arquivo.readline(3)) # lê os primeiros 3 bytes
+        print(arquivo2.readlines())
+# não deu excessão, mesmo com mesmo nome do descritor
