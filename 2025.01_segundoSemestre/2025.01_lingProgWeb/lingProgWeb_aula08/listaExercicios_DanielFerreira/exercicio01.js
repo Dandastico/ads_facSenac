@@ -4,7 +4,8 @@
 // primeiro vou preparar a string
 let resp = "";
 for (let i = 1; i <= 100; i++) {
-    resp += i + <br />;
+    resp += i + "<br />";
 }
 
-document.getElementById("resposta") = resp;
+const impressao = document.getElementById("resposta");
+impressao.innerHTML = resp;
