@@ -8,16 +8,17 @@ def main():
 
     media = calc_media(grades)
     string = f"A média do aluno é {media:.2f}"
+    print(string)
 
-    with open("media.txt", 'w') as file:
-        file.write("string")
+    with open("slide09_ex01.txt", 'w', encoding="utf8") as file:
+        file.write(string)
         
-
 
 # função que recebe do usuário as 4 notas
 def get_grades():
     grades = []
-    while True:
+    # três tentativas pra pessoa escrever certo
+    for i in range(3):
         try:
             for i in range(4):
                 grades.append(float(input(f"{i+1}ª nota: ")))
@@ -35,6 +36,7 @@ def calc_media(grades):
 
     # retorne valor da soma dividido pela quantidade de elementos somados
     return sum / len(grades)
+
 
 if __name__ == "__main__":
     main()
