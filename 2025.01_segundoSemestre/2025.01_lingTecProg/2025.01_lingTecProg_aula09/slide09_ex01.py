@@ -36,6 +36,7 @@ def get_grades():
     return None
 
 
+# calcula a média
 def calc_media(grades):
     sum = 0
     for grade in grades:
@@ -45,6 +46,7 @@ def calc_media(grades):
     return sum / len(grades)
 
 
+# gravar no disco a média em um arquivo txt
 def gerar_arquivo(media):
     string = f"A média do aluno é {media:.2f}"
 
