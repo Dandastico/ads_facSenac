@@ -6,29 +6,34 @@ e mostre a média
 def main():
     grades = get_grades()
 
-    media = calc_media(grades)
-    string = f"A média do aluno é {media:.2f}"
-    print(string)
+    if grades == None:
+        print("\nNão foi possível calcular a média\n")
+    else:
+        # calcular média
+        media = calc_media(grades)
 
-    with open("slide09_ex01.txt", 'w', encoding="utf8") as file:
-        file.write(string)
+        # gerar arquivo
+        gerar_arquivo(media)
+        
         
 
 # função que recebe do usuário as 4 notas
 def get_grades():
-    grades = []
+
     # três tentativas pra pessoa escrever certo
     for i in range(3):
         try:
+            grades = []
             for i in range(4):
                 grades.append(float(input(f"{i+1}ª nota: ")))
                 if grades[i] < 0:
-                    print("Nota não pode ser número negativo")
-        except ValueError:
-            print("\nErro: nota deve ser numérico!\nTente novamente")
-        else:
-            break
-    return grades
+                    raise ValueError("Nota não pode ser negativa!")
+            # retorna a lista se tudo tiver dado certo
+            return grades
+        except ValueError as e:
+            print(f"\nErro: {e}\nTente novamente")
+    # tentou 3 vezes e deu ruim, retorne None
+    return None
 
 
 def calc_media(grades):
@@ -38,6 +43,13 @@ def calc_media(grades):
 
     # retorne valor da soma dividido pela quantidade de elementos somados
     return sum / len(grades)
+
+
+def gerar_arquivo(media):
+    string = f"A média do aluno é {media:.2f}"
+
+    with open("slide09_ex01.txt", 'w', encoding="utf8") as f:
+        f.write(string)
 
 
 if __name__ == "__main__":
