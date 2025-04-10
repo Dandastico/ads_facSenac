@@ -6,7 +6,7 @@ e mostre a média
 def main():
     grades = get_grades()
 
-    if grades == None:
+    if grades is None:
         print("\nNão foi possível calcular a média\n")
     else:
         # calcular média
