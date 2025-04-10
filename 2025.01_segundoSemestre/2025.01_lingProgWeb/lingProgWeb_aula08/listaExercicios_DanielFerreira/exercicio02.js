@@ -1,7 +1,7 @@
 // função que imprime na ordem ascendente
 function asc(start, end) {
-    let less = parseInt(start.value);
-    let more = parseInt(end.value);
+    let less = parseInt(document.getElementById("start").value);
+    let more = parseInt(document.getElementById("end").value);
 
     let numbers = []
     for (let i = less; i <= more; i++) {
