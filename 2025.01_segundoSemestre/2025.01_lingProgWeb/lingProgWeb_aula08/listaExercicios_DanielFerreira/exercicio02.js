@@ -10,21 +10,22 @@ function asc() {
     let less = parseInt(document.getElementById("start").value);
     let more = parseInt(document.getElementById("end").value);
 
+    // montar o array em ordem crescente
     let numbers = []
     for (let i = less; i <= more; i++) {
         numbers.push(i);
     }
 
-    // pra cada elemento no array, imprima no HTML
+    // montar a string que será impressa
     let txt = '';
-    function render(value) {
+    function build_txt(value) {
         txt += value + ' '
     }
-    numbers.forEach(render);
+    numbers.forEach(build_txt);
 
     // demonstrar string no HTML
     let resp = document.getElementById("resposta");
-    resp.innerHTML = txt
+    resp.innerHTML = txt;
 }
 
 
@@ -35,6 +36,23 @@ function desc() {
 
     let less = parseInt(document.getElementById("start").value);
     let more = parseInt(document.getElementById("end").value);
+
+    // montar o array em ordem decrescente
+    let numbers = []
+    for (let i = more; i >= less; i--) {
+        numbers.push(i);
+    }
+
+    // montar a string que será impressa
+    let txt = ''
+    function build_txt(value) {
+        txt += value + ' ';
+    }
+    numbers.forEach(build_txt);
+
+    // demonstrar string no HTML
+    let resp = document.getElementById("resposta");
+    resp.innerHTML = txt;
 }
 
 
