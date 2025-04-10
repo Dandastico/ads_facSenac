@@ -1,5 +1,5 @@
 // função que imprime na ordem ascendente
-function asc(start, end) {
+function asc() {
     let less = parseInt(document.getElementById("start").value);
     let more = parseInt(document.getElementById("end").value);
 
