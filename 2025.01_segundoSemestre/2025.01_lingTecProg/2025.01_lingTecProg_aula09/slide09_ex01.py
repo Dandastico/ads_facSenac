@@ -22,6 +22,8 @@ def get_grades():
         try:
             for i in range(4):
                 grades.append(float(input(f"{i+1}ª nota: ")))
+                if grades[i] < 0:
+                    print("Nota não pode ser número negativo")
         except ValueError:
             print("\nErro: nota deve ser numérico!\nTente novamente")
         else:
