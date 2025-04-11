@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+    <style>
+        input {
+            display: block;
+        }
+
+        #entrar, #atender {
+            display: block;
+            margin-top: 0.75rem;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício 03</h1>
+    <p>
+        Escreva um programa para controlar uma fila de atendimento, deve guardar o nome da pessoa ao clicar no botão "entrar na fila" e inserir no final de uma fila (use um vetor para guarda no nome das pessoas).
+        <br />
+        Quando a pessoa for atendida, deve clicar no botão "atender" que vai retirar o nome da pessoa que está no primeiro lugar na fila. A cada atualização, deve exibir os nomes das pessoas que estão na fila. Para inserir no final da fila use o método "push()" e para remover do início da fila use o método "shift()"
+    </p>
+
+    <h2>Resolução</h2>
+    <form>
+
+        <!-- input -->
+        <label for="txt">Nome</label>
+        <input type="text" id="txt" name="txt" required />
+
+        <input type="button" value="Entrar na Fila" id="entrar" />
+
+        <!-- demonstração da fila -->
+        <h2>Fila</h2>
+        <p id="resposta"></p>
+
+        <input type="button" value="Atender" id="atender" />
+    </form>
+
+
+
+    <script src="exercicio04.js"></script>
+</body>
+</html>
