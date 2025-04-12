@@ -1,8 +1,8 @@
 console.log("JS 04 carregou!")
 
-
-// inicializar fila como variável global
+// inicializar variáveis
 let fila = [];
+let resp = document.getElementById("resposta");
 
 
 // criar funções que introduz nome digitado no array de clientes
@@ -15,12 +15,22 @@ function entrarFila() {
 
     // adicionar nome na última posição do array
     fila.push(nome);
-    return fila
+
+    // mostrar fila na tela
+    resp.innerHTML = fila;
 }
 
-// mostrar fila na tela
-let resp = document.getElementById("resposta");
-resp.innerHTML = fila;
+
+// criar função que retira o primeiro nome do array de clientes
+function  sairFila(fila) {
+    comnsole.log("Função sairFila ativada!");
+
+    // retirar primeiro nome do array
+    fila.shift();
+    console.log(fila);
+}
+
+
 
 
 // vou criar os observadores de eventos para cada botão
