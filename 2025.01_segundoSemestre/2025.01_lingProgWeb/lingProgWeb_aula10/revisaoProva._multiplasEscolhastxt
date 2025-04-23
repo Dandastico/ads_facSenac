@@ -1,0 +1,22 @@
+QUESTÃO 1
+b- const xxxx = (a,b) => a*b;
+
+QUESTÃO 2
+d- filter(). O filter() é um método que retorna os elementos que passam por uma condicional
+
+QUESTÃO 3
+b- forEACH(). forEach realiza ações sobre cada elemento, o map() retorna o valor após executar uma função sobre cada elemento
+
+QUESTÃO 4
+d- Preço: 100.00 Comissão: 0.00 Total: 100.00
+Isso ocorre porque o valor da comissão não está sendo alterado dentro do bloco de código if-else. Novas variáveis estão sendo criadas que existirão apenas dentro do bloco de código
+
+QUESTÃO  5
+e- let podeDirigir = (idade >= 18) ? "Sim":"Não";
+Operador ternário retorna o valor à esquerda do dois pontos quando verdadeiro, o da direita quando falso
+
+QUESTÃO 6
+a - false
+
+QUESTÃO 7
+c- Variáveis const precisam ser inicializadas na declaração.
