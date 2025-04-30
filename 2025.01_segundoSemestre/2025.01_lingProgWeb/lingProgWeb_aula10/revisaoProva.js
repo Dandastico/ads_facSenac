@@ -12,3 +12,13 @@ function filtrarNomes(nomes) {
 }
 
 filtrarNomes(nomes);
+
+function filtrarNomes(nomes) {
+    let maiusculas = nomes.filter(nome => nome.length > 5).map(nome => nome.toUpperCase()).sort();
+
+    maiusculas.forEach(nome =>{
+        console.log(`- ${nome} tem ${nome.length} letras`);
+    })
+}
+
+filtrarNomes(nomes);
