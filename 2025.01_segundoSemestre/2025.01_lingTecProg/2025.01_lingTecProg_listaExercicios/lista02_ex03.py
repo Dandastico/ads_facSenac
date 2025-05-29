@@ -5,7 +5,7 @@ def main():
     try:
         quant = int(input("Quantos números devem ser gerados: "))
     except:
-        sys.exit("ERRO: só aceito números, bobão")
+        sys.exit("ERRO: só aceito números inteiros, bobão")
 
     nums = gerar_lista(quant)
 
