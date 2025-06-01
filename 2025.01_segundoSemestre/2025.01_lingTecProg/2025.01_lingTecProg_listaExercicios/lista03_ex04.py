@@ -24,7 +24,7 @@ def separar_numeros(nums):
     pares = []
     impares= []
     for n in nums:
-        pares.append(n) if n%2==0 else impares.append(n)
+        pares.append(n) if n % 2 == 0 else impares.append(n)
     return pares, impares
 
 
