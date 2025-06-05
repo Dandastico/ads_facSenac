@@ -1,7 +1,7 @@
 def main():
     nums = [0,3,7,8,9,10,23,43,123,333]
     primos = list(filter(validar_primo, nums))
-    print(primos)
+    print(f"Os números primos são {primos}")
 
 
 def validar_primo(n):

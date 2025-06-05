@@ -1,7 +1,7 @@
 def main():
     frase, palavra = pedir_input()
     quant = frase.count(palavra)
-    print(quant)
+    print(f"{palavra.capitalize()} aparece {quant} vez(es) na frase")
 
 
 def pedir_input():
