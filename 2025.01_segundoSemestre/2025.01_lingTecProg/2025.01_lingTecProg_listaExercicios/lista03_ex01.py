@@ -23,7 +23,7 @@ def filtrar_nums(n):
         return True
     if n % 2 == 0:
         return False
-    for i in range(3, n/2):
+    for i in range(3, int(n/2)):
         if n % i == 0: return False
     return True
 
