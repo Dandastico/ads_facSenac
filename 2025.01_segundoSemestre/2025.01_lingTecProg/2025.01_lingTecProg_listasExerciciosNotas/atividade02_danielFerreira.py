@@ -11,7 +11,7 @@ def validar_primo(n):
     if n == 2: return True
     # qualquer outro par nao é primo
     if n % 2 == 0:  return False
-    # dividr números ímpares a partir do 3
+    # dividr dividir o número apenas por números primos
     for i in range(3, int(n/2), 2):
         if n % i == 0: return False
     # sobreviveu ao loop, então é primo
