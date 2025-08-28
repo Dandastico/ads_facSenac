@@ -1,0 +1,94 @@
+-- MySQL Workbench Synchronization
+-- Generated: 2025-08-28 11:08
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: Daniel55761076
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+CREATE SCHEMA IF NOT EXISTS `Loja_CS_3MB` DEFAULT CHARACTER SET utf8 ;
+
+CREATE TABLE IF NOT EXISTS `Loja_CS_3MB`.`cds` (
+  `id_cd` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Contém o código de identificação do CD no sistema',
+  `nome_cd` VARCHAR(45) NOT NULL COMMENT 'Contém o nome do CD',
+  `preco_cd` DECIMAL(8,2) NOT NULL,
+  `fk_gravadora` INT(11) NOT NULL,
+  PRIMARY KEY (`id_cd`),
+  INDEX `fk_cds_gravadoras_idx` (`fk_gravadora` ASC) VISIBLE,
+  CONSTRAINT `fk_cds_gravadoras`
+    FOREIGN KEY (`fk_gravadora`)
+    REFERENCES `Loja_CS_3MB`.`gravadoras` (`id_gravadora`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `Loja_CS_3MB`.`gravadoras` (
+  `id_gravadora` INT(11) NOT NULL AUTO_INCREMENT,
+  `nome_gravadora` VARCHAR(45) NOT NULL,
+  `tel_gravadora` CHAR(15) NOT NULL,
+  PRIMARY KEY (`id_gravadora`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `Loja_CS_3MB`.`musicas` (
+  `id_musica` INT(11) NOT NULL AUTO_INCREMENT,
+  `nome_musica` VARCHAR(45) NOT NULL,
+  `duracao` TIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id_musica`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `Loja_CS_3MB`.`autores` (
+  `id_autor` INT(11) NOT NULL AUTO_INCREMENT,
+  `nome_autor` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_autor`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `Loja_CS_3MB`.`composicoes` (
+  `id_musica` INT(11) NOT NULL,
+  `id_autor` INT(11) NOT NULL,
+  PRIMARY KEY (`id_musica`, `id_autor`),
+  INDEX `fk_musicas_has_autores_autores1_idx` (`id_autor` ASC) VISIBLE,
+  INDEX `fk_musicas_has_autores_musicas1_idx` (`id_musica` ASC) VISIBLE,
+  CONSTRAINT `fk_musicas_has_autores_musicas1`
+    FOREIGN KEY (`id_musica`)
+    REFERENCES `Loja_CS_3MB`.`musicas` (`id_musica`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_musicas_has_autores_autores1`
+    FOREIGN KEY (`id_autor`)
+    REFERENCES `Loja_CS_3MB`.`autores` (`id_autor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `Loja_CS_3MB`.`faixas` (
+  `num_faixa` SMALLINT(6) NOT NULL,
+  `id_cd` INT(11) NOT NULL,
+  `id_musica` INT(11) NOT NULL,
+  PRIMARY KEY (`id_cd`, `id_musica`, `num_faixa`),
+  INDEX `fk_cds_has_musicas_musicas1_idx` (`id_musica` ASC) VISIBLE,
+  INDEX `fk_cds_has_musicas_cds1_idx` (`id_cd` ASC) VISIBLE,
+  CONSTRAINT `fk_cds_has_musicas_cds1`
+    FOREIGN KEY (`id_cd`)
+    REFERENCES `Loja_CS_3MB`.`cds` (`id_cd`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cds_has_musicas_musicas1`
+    FOREIGN KEY (`id_musica`)
+    REFERENCES `Loja_CS_3MB`.`musicas` (`id_musica`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
