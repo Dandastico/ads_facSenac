@@ -1,0 +1,9 @@
+USE SCHEMA escola;
+
+CREATE TABLE usuario(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(200) NOT NULL,
+    sobrenome VARCHAR(200) NOT NULL,
+    idade INTEGER NOT NULL,
+    seco CHAR(1) NOT NULL
+)
