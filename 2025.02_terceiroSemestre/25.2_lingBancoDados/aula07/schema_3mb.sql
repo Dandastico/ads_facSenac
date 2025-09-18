@@ -32,3 +32,7 @@ DROP id_gravadora;
 -- Adicionando a coluna sem designá-la como chave primária
 ALTER TABLE gravadoras
 ADD COLUMN id_gravadora SMALLINT;
+
+-- Designando a coluna id_gravadora como chave primária novamente
+ALTER TABLE gravadoras
+ADD PRIMARY KEY (id_gravadora);
