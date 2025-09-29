@@ -3,7 +3,7 @@ EXERCÍCIOS
 1- Informe quantos celulares foram vendidos por ano
 2- Informe o produto mais barato vendido por ano
 3- Informe a média de vendas por ano
-4- Informe a soma de vendas por ano
+4- Informe a soma de vendas por anoALUNOS
 5- Informe quantos produtos de cada categoria estão disponíveis para venda
 */
 
