@@ -39,7 +39,7 @@ GROUP BY ano_aquisicao
 ORDER BY ano_aquisicao;
 
 -- quantos produtos disponíveis para venda
-SELECT COUNT(*) AS quant_produtos_disponiveis
+SELECT categoria, COUNT(*) AS quant_produtos_disponiveis
 FROM PRODUTOS
 WHERE status_venda = 'Disponível'
 GROUP BY categoria
