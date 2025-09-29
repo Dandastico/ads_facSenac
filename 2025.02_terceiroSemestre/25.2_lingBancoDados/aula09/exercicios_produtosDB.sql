@@ -4,7 +4,7 @@ EXERCÍCIOS
 2- Informe o produto mais barato vendido por ano
 3- Informe a média de vendas por ano
 4- Informe a soma de vendas por ano
-5- Informe quantos produtos estão disponíveis para venda
+5- Informe quantos produtos de cada categoria estão disponíveis para venda
 */
 
 SELECT * FROM PRODUTOS;
@@ -41,4 +41,6 @@ ORDER BY ano_aquisicao;
 -- quantos produtos disponíveis para venda
 SELECT COUNT(*) AS quant_produtos_disponiveis
 FROM PRODUTOS
-WHERE status_venda = 'Disponível';
+WHERE status_venda = 'Disponível'
+GROUP BY categoria
+ORDER BY categoria;

@@ -44,3 +44,6 @@ WHERE status_venda = 'Vendido'
 GROUP BY ano_aquisicao
 ORDER BY ano_aquisicao;
 
+-- teste do MIN() com string
+SELECT MIN(marca) FROM PRODUTOS; -- compara valor alfabético
+
