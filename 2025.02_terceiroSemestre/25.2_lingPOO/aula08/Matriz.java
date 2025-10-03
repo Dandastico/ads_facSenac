@@ -1,32 +1,12 @@
 public class Matriz {
     public static void main(String[] args) {
-        // armaazena valor na matriz
-        int[][] matriz = {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        };
+        // cria objeto da classe Estrutura
+        Estrutura pedreiro = new Estrutura();
 
-        // percorer a matriz pela linha primeiro
-        for (int i = 0; i < matriz.length; i++)
-        {
-            for (int j = 0; j < matriz[0].length; j++)
-            {
-                System.out.print(matriz[i][j] + " ");
-            }
-            System.out.println(); // pular linha
-        }
-        System.out.println(); // pula linha ao terminar de imprimir 
+        // chama método para preencher a matriz
+        int[][] matriz = pedreiro.preencherMatriz(3, 3);
 
-        // percorrer pelas colunas
-        for (int j = 0; j < matriz[0].length; j++)
-        {
-            for (int i = 0; i < matriz.length; i++)
-            {
-                System.out.print(matriz[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-    } // fim main
+        // chama método que imprime valores da matriz
+        pedreiro.imprimir(matriz);
+    }
 }
