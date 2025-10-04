@@ -18,5 +18,9 @@ public class Matriz {
 
         matriz = pedreiro.atualizarMatriz(matriz, 3, 0, 100);
         matriz = pedreiro.atualizarMatriz(matriz, 0, 3, 100);
+
+        // chama método para pesquisar valor na matriz
+        pedreiro.encontrar(matriz, 1000); // encontrou
+        pedreiro.encontrar(matriz, 999); // não encontra
     }
 }

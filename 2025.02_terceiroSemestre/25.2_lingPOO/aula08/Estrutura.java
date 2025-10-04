@@ -50,10 +50,19 @@ public class Estrutura {
 
 
     public void encontrar(int[][] matriz, int alvo) {
+        boolean encontrei = false;
+
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-
+                if (matriz[i][j] == alvo) {
+                    System.out.printf("%d foi encontrada na posição linha %d, coluna %d\n", alvo, i, j);
+                    encontrei = true;
+                }
             }
+        }
+
+        if (!encontrei) {
+            System.out.printf("%d não se encontra na matriz\n", alvo);
         }
     } // fim do método
 }
