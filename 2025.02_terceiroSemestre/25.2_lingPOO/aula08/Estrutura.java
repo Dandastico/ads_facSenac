@@ -28,4 +28,22 @@ public class Estrutura {
 
         return matriz;
     }
+
+    public int[][] atualizarMatriz(int[][] matriz, int linha, int coluna, int valor) {
+
+        // número da linha inválido
+        if (linha < 0 || linha >= matriz.length) {
+            System.out.println("Linha inválida!");
+            return matriz;
+        }
+
+        // número da coluna inválido
+        if (coluna < 0 || coluna >= matriz[0].length) {
+            System.out.println("Coluna inválida");
+            return matriz;
+        }
+
+        matriz[linha][coluna] = valor;
+        return matriz;
+    }
 }
