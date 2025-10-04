@@ -29,6 +29,7 @@ public class Estrutura {
         return matriz;
     }
 
+
     public int[][] atualizarMatriz(int[][] matriz, int linha, int coluna, int valor) {
 
         // número da linha inválido
@@ -45,5 +46,14 @@ public class Estrutura {
 
         matriz[linha][coluna] = valor;
         return matriz;
-    }
+    } // fim do método
+
+
+    public void encontrar(int[][] matriz, int alvo) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+
+            }
+        }
+    } // fim do método
 }
