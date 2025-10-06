@@ -53,6 +53,7 @@ ORDER BY categoria;
 SELECT *
 FROM PRODUTOS
 WHERE marca LIKE 'LG'
+AND status_venda = 'Vendido'
 ORDER BY valor DESC
 LIMIT 5;
 
@@ -62,6 +63,6 @@ SELECT
     YEAR(data_venda) AS ano,
     MONTH(data_venda) AS mes,
     COUNT(*) AS quantidade_vendas
-FROM TURMAB.VENDAS
-GROUP BY YEAR(data_venda), MONTH(data_venda)
-ORDER BY ano DESC, mes DESC;
+FROM VENDAS
+GROUP BY MONTH(data_venda)
+ORDER BY mes DESC;
