@@ -39,21 +39,21 @@ SELECT * FROM PRODUTOS;
 SELECT *
 FROM PRODUTOS
 WHERE pais_fabricacao LIKE 'Japão'
-AND status_venda LIKE 'Vendido'
+	AND status_venda LIKE 'Vendido'
 ORDER BY valor DESC;
 
 --  5 - QUAIS PRODUTOS DISPONÍVEIS PARA VENDA TÊM VALOR ACIMA DE 5 MIL, ORDENADOS POR CATEGORIA ALFABETICAMENTE?
 SELECT *
 FROM PRODUTOS
 WHERE status_venda LIKE 'Disponível'
-AND valor > 5000.00
+	AND valor > 5000.00
 ORDER BY categoria;
 
 -- 6 - QUAIS OS 5 PRODUTOS MAIS CAROS QUE FORAM VENDIDOS, DA MARCA LG?
 SELECT *
 FROM PRODUTOS
 WHERE marca LIKE 'LG'
-AND status_venda = 'Vendido'
+	AND status_venda = 'Vendido'
 ORDER BY valor DESC
 LIMIT 5;
 
@@ -64,5 +64,5 @@ SELECT
     MONTH(data_venda) AS mes,
     COUNT(*) AS quantidade_vendas
 FROM VENDAS
-GROUP BY MONTH(data_venda)
-ORDER BY mes DESC;
+GROUP BY YEAR(data_venda), MONTH(data_venda)
+ORDER BY ano DESC, mes DESC;
