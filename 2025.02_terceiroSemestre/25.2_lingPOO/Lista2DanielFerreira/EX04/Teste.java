@@ -7,7 +7,7 @@ public class Teste {
         Impressora impressora = new Impressora();
 
         // cria vetor
-        int[] vetor = obj.criarVetor();
+        int[] vetor = obj.criarVetor(10);
         
         // verifica quais elementos do vetor são pares
         int[] pares = obj.encontrarPares(vetor);
