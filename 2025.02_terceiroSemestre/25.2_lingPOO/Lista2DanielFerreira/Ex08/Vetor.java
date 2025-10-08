@@ -21,13 +21,13 @@ public class Vetor {
 
     public void imprimirQntdNegativos() {
         int qntdNegativos = 0;
-        for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i] < 0) {
+        for (int i = 0; i < this.numeros.length; i++) {
+            if (this.numeros[i] < 0) {
                 qntdNegativos++;
             }
         }
 
-        System.out.println("Há " + qntdNegativos + " números negativos no vetor.");
+        System.out.println("Há " + qntdNegativos + " números negativos no vetor");
     } //fim método
 
     public void imprimirSomaPositivos() {
