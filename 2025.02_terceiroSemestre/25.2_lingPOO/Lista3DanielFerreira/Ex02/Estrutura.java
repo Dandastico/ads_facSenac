@@ -17,6 +17,7 @@ public class Estrutura {
         } // fim de for-loop
 
         return matriz;
+        
     } // fim método
 
 }
