@@ -78,3 +78,44 @@ ON v.id_produto = p.id
 WHERE p.marca = "Sony"
 ORDER BY v.valor DESC
 ;
+
+
+-- Nome, telefone, valor de venda e data da venda de todos os notebooks vendidos
+-- entre janeiro e março
+
+SELECT
+	c.nome,
+    c.telefone,
+    v.valor,
+    v.data_venda
+FROM CLIENTES c
+INNER JOIN VENDAS v
+ON c.cpf = v.cpf_cliente
+INNER JOIN PRODUTOS p
+ON v.id_produto = id
+WHERE
+	MONTH(v.data_venda) >= 01
+    AND MONTH(v.data_venda) <= 03
+    AND p.categoria = "Notebook"
+;
+
+
+-- nome, teleone, valor de venda e data da venda de todos os clientes que
+-- compraram produtos da marca samsums ou
+-- cujo modelo contenha a palavra galaxy
+
+SELECT
+	c.nome,
+    c.telefone,
+    v.valor,
+    v.data_venda
+FROM CLIENTES c
+INNER JOIN VENDAS v
+ON c.cpf = v.cpf_cliente
+INNER JOIN PRODUTOS p
+ON p.id = v.id_produto
+WHERE
+	p.marca = "Samsung"
+    OR modelo LIKE "%Galaxy%"
+;
+
